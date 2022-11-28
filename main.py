@@ -227,28 +227,6 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
         message = await bot.send_message(ev.chat.id,'✅ 𝕰𝖑 𝖚𝖘𝖚𝖆𝖗𝖎𝖔 𝖘𝖊 𝖍𝖆 𝖆ñ𝖆𝖉𝖎𝖉𝖔 𝖊𝖝𝖎𝖙𝖔𝖘𝖆𝖒𝖊𝖓𝖙𝖊')
         return
     
-    if '/search_proxy' in msgText:
-        msg_start = 'Buscando proxy, esto puede tardar de una a dos horas...'
-        bot.sendMessage(update.message.chat.id,msg_start)
-        print("Buscando proxy...")
-        for port in range(3029,3032):
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-            result = sock.connect_ex(('152.206.139.117:',port))  
-
-            if result == 0: 
-                print ("Puerto abierto!")
-                print (f"Puerto: {port}")  
-                proxy = f'152.206.139.117:{port}'
-                proxy_new = S5Crypto.encrypt(f'{proxy}')
-                msg = 'Su nuevo proxy es:\n\nsocks5://' + proxy_new
-                bot.sendMessage(update.message.chat.id,msg)
-                break
-            else: 
-                print ("Error...Buscando...")
-                print (f"Buscando en el puerto: {port}")
-                sock.close()
-
-        return
     if '/proxy' in text and username in godlist:
         tx = str(text).split('/proxy ')[1]
         config.static_proxy = tx
