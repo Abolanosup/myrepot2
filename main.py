@@ -22,8 +22,8 @@ from pydownloader.downloader import Downloader
 import shorturl
 import xdlink
 
-tl_admin_users = ['reymichel2009'] #Poner aqui los user con acceso permanente
-godlist = ['reymichel2009'] #Poner aqui los admin 
+tl_admin_users = ['Abolanos3'] #Poner aqui los user con acceso permanente
+godlist = ['Abolanos3'] #Poner aqui los admin 
 
 async def get_root(username):
     if os.path.isdir(config.ROOT_PATH+username)==False:
@@ -79,9 +79,9 @@ async def download_progress(dl, filename, currentBits, totalBits, speed, totalti
             msg = '========>>> #𝔻𝕖𝕤𝕔𝕒𝕣𝕘𝕒𝕟𝕕𝕠 <<<<========\n'
             msg += '⚜️ ' + filename + ' ⚜️ '
             msg += '\n' + text_progres(currentBits, totalBits) + ' ' + str(porcent(currentBits, totalBits)) + '%\n' + '\n'
-            msg += '🌐 #𝔻𝕖𝕤𝕔𝕒𝕣𝕘𝕒𝕕𝕠 =>> ' + sizeof_fmt(currentBits) + ' de ' + sizeof_fmt(totalBits) + '\n'
-            msg += '🌐 #𝕍𝕖𝕝𝕠𝕔𝕚𝕕𝕒𝕕 =>> ' + sizeof_fmt(speed) + '/s\n'
-            msg += '🌐 #𝕋𝕚𝕖𝕞𝕡𝕠 =>> ' + str(time.strftime('%H:%M:%S', time.gmtime(totaltime))) + 's\n'
+            msg += '#𝔻𝕖𝕤𝕔𝕒𝕣𝕘𝕒𝕕𝕠 =>> ' + sizeof_fmt(currentBits) + ' de ' + sizeof_fmt(totalBits) + '\n'
+            msg += '#𝕍𝕖𝕝𝕠𝕔𝕚𝕕𝕒𝕕 =>> ' + sizeof_fmt(speed) + '/s\n'
+            msg += '#𝕋𝕚𝕖𝕞𝕡𝕠 =>> ' + str(time.strftime('%H:%M:%S', time.gmtime(totaltime))) + 's\n'
             msg += '========>>> #𝔻𝕖𝕤𝕔𝕒𝕣𝕘𝕒𝕟𝕕𝕠 <<<<========\n\n'
             await bot.edit_message(ev.chat,message,text=msg)
 
@@ -102,9 +102,9 @@ def upload_progress(filename, currentBits, totalBits, speed, totaltime, args):
             msg = '========>>> 𝕾𝖚𝖇𝖎𝖊𝖓𝖉𝖔 <<<<========\n'
             msg += '⚜️ ' + filename + ' ⚜️ '
             msg += '\n' + text_progres(currentBits, totalBits) + ' ' + str(porcent(currentBits, totalBits)) + '%\n' + '\n'
-            msg += '🌐 𝕾𝖚𝖇𝖎𝖉𝖔 =>> ' + sizeof_fmt(currentBits) + ' de ' + sizeof_fmt(totalBits) + '\n'
-            msg += '🌐 𝖛𝖊𝖑𝖔𝖈𝖎𝖉𝖆𝖉 =>> ' + sizeof_fmt(speed) + '/s\n'
-            msg += '🌐 𝕿𝖎𝖊𝖒𝖕𝖔 =>> ' + str(time.strftime('%H:%M:%S', time.gmtime(totaltime))) + 's\n'
+            msg += '𝕾𝖚𝖇𝖎𝖉𝖔 =>> ' + sizeof_fmt(currentBits) + ' de ' + sizeof_fmt(totalBits) + '\n'
+            msg += '𝖛𝖊𝖑𝖔𝖈𝖎𝖉𝖆𝖉 =>> ' + sizeof_fmt(speed) + '/s\n'
+            msg += '𝕿𝖎𝖊𝖒𝖕𝖔 =>> ' + str(time.strftime('%H:%M:%S', time.gmtime(totaltime))) + 's\n'
             msg += '========>>> #𝕊𝕦𝕓𝕚𝕖𝕟𝕕𝕠 <<<<========\n\n'
             STORE_UPLOADER[filename] = msg
 
